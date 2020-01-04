@@ -6,7 +6,9 @@
   "homepage": "https://abdullahahmeda.github.io/weathero",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Abdullah Ahmed",
   "license": "ISC",
@@ -20,6 +22,7 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "prettier": "^1.19.1"
   }
 }
