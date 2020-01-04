@@ -1,0 +1,70 @@
+/*
+
+Convention
+===========
+.p-value is for property: value
+
+example: .d-block is for display: block
+
+-----------------------------------------
+
+for properties with more than one word, take the first letter of each word followed by -value
+for example: .br-50 is for border-radius: 50%
+
+Units
+=====
+Numbers without units are meant to be percentages, for example .w-100 means width: 100% unless there are units, for example .w-100vw means width: 100vw
+*/
+
+/* globals */
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* custom classes */
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 45rem;
+}
+
+/* display_prop */
+.d-block {
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+/* width_prop */
+.w-100 {
+    width: 100%;
+}
+
+.w-100vw {
+    width: 100vw;
+}
+
+/* height_prop */
+.h-100 {
+    height: 100%;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+/* cursor_prop */
+.c-pointer {
+    cursor: pointer;
+}
+
+/* border-radius_prop */
+.br-50 {
+    border-radius: 50%;
+}
+
+/*# sourceMappingURL=/framework.96a096cb.css.map */
