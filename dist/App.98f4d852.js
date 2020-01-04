@@ -31776,7 +31776,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 const Card = ({
   city
 }) => {
-  console.log(city);
   const [lat, setLat] = (0, _react.useState)(0);
   const [lon, setLon] = (0, _react.useState)(0);
   const [weatherInfo, setWeatherInfo] = (0, _react.useState)({});
@@ -31802,6 +31801,8 @@ const Card = ({
   }
 
   (0, _react.useEffect)(() => {
+    setIsLoaded(false);
+    setError(null);
     getLatAndLon(city).then(res => getWeatherInfo(res[0], res[1]).then(weatherInfo => {
       setWeatherInfo(weatherInfo);
       setIsLoaded(true);
@@ -31812,7 +31813,7 @@ const Card = ({
       setError("Couldn't fetch this city");
       setIsLoaded(true);
     });
-  }, []);
+  }, [city]);
 
   if (isLoaded) {
     if (error) {
@@ -31875,9 +31876,11 @@ class Search extends _react.default.Component {
   }
 
   handleClick() {
-    this.setState({
-      city: this.state.search
-    });
+    if (this.state.city != this.state.search) {
+      this.setState({
+        city: this.state.search
+      });
+    }
   }
 
   render() {
@@ -31995,7 +31998,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58720" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64288" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

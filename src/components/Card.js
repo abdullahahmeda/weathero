@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 const Card = ({ city }) => {
-  console.log(city);
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
   const [weatherInfo, setWeatherInfo] = useState({});
@@ -35,6 +34,8 @@ const Card = ({ city }) => {
   }
 
   useEffect(() => {
+    setIsLoaded(false);
+    setError(null);
     getLatAndLon(city)
       .then(res =>
         getWeatherInfo(res[0], res[1])
@@ -53,7 +54,7 @@ const Card = ({ city }) => {
         setError("Couldn't fetch this city");
         setIsLoaded(true);
       });
-  }, []);
+  }, [city]);
 
   if (isLoaded) {
     if (error) {

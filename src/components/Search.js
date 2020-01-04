@@ -34,9 +34,11 @@ class Search extends React.Component {
   }
 
   handleClick() {
-    this.setState({
-      city: this.state.search
-    });
+    if (this.state.city != this.state.search) {
+      this.setState({
+        city: this.state.search
+      });
+    }
   }
 
   render() {
