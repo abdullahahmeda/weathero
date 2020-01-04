@@ -17,7 +17,9 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://ip-api.com/json/`)
+    fetch(
+      `https://api.ipgeolocation.io/ipgeo?apiKey=119d49caada94f3795b550b4a5bd64c9`
+    )
       .then(res => res.json())
       .then(({ city }) => {
         this.setState({

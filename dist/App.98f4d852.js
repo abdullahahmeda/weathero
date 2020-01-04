@@ -31794,7 +31794,7 @@ const Card = ({
   }
 
   async function getWeatherInfo(lat, lon) {
-    const weatherInfoResponse = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=61d73e45df80deb2df40e579474e2849`).then(res => res.json()).then(({
+    const weatherInfoResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=61d73e45df80deb2df40e579474e2849`).then(res => res.json()).then(({
       main
     }) => main).catch(error => "Couldn't fetch weather data. Please check your internet connection");
     return weatherInfoResponse;
@@ -31860,7 +31860,7 @@ class Search extends _react.default.Component {
   }
 
   componentDidMount() {
-    fetch(`http://ip-api.com/json/`).then(res => res.json()).then(({
+    fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=119d49caada94f3795b550b4a5bd64c9`).then(res => res.json()).then(({
       city
     }) => {
       this.setState({
@@ -31998,7 +31998,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64288" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49249" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

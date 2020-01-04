@@ -22,7 +22,7 @@ const Card = ({ city }) => {
 
   async function getWeatherInfo(lat, lon) {
     const weatherInfoResponse = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=61d73e45df80deb2df40e579474e2849`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=61d73e45df80deb2df40e579474e2849`
     )
       .then(res => res.json())
       .then(({ main }) => main)
